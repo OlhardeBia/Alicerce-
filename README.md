@@ -4,22 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Produto Alicerce</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --verde:      #1D9E75;
-    --verde-esc:  #085041;
-    --verde-clr:  #E1F5EE;
-    --roxo:       #534AB7;
-    --roxo-clr:   #EEEDFE;
-    --amber:      #B07A1A;
-    --amber-clr:  #FAEEDA;
-    --cinza-esc:  #2C2C2A;
-    --cinza-med:  #5F5E5A;
-    --cinza-clr:  #F1EFE8;
-    --borda:      #D3D1C7;
+    /* Paleta Olhar de Bia */
+    --laranja:     #F48028;
+    --laranja-esc: #B85A10;
+    --laranja-clr: #FEF0E4;
+    --teal:        #0CC1BC;
+    --teal-esc:    #087A77;
+    --teal-clr:    #E0F9F8;
+    --amarelo:     #FEED0D;
+    --amarelo-esc: #C4B800;
+    --amarelo-clr: #FFFDE6;
+
+    /* Aliases funcionais */
+    --verde:      #0CC1BC;
+    --verde-esc:  #1A3A38;
+    --verde-clr:  #E0F9F8;
+    --roxo:       #F48028;
+    --roxo-clr:   #FEF0E4;
+    --amber:      #C4B800;
+    --amber-clr:  #FFFDE6;
+
+    /* Neutros */
+    --cinza-esc:  #1E1E1E;
+    --cinza-med:  #5A5A5A;
+    --cinza-clr:  #F4F4F2;
+    --borda:      #E0DED8;
     --branco:     #FFFFFF;
     --bg:         #FAFAF8;
   }
@@ -35,7 +49,7 @@
 
   /* ── HEADER ── */
   header {
-    background: var(--verde-esc);
+    background: var(--cinza-esc);
     padding: 0 2rem;
     position: sticky;
     top: 0;
@@ -44,24 +58,24 @@
     align-items: center;
     justify-content: space-between;
     height: 56px;
-    border-bottom: 3px solid var(--verde);
+    border-bottom: 3px solid var(--laranja);
   }
 
   .logo {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
     color: var(--branco);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
-  .logo span { color: #5DCAA5; }
+  .logo span { color: var(--amarelo); }
 
   .progresso-geral {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 0.78rem;
-    color: #9FE1CB;
+    color: rgba(255,255,255,0.6);
   }
   .progresso-geral-bar {
     width: 120px;
@@ -72,14 +86,14 @@
   }
   .progresso-geral-fill {
     height: 100%;
-    background: var(--verde);
+    background: var(--laranja);
     border-radius: 99px;
     transition: width 0.6s ease;
   }
 
   /* ── HERO ── */
   .hero {
-    background: var(--verde-esc);
+    background: var(--cinza-esc);
     padding: 3.5rem 2rem 3rem;
     text-align: center;
     position: relative;
@@ -89,16 +103,17 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(29,158,117,0.18) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 30% 60%, rgba(12,193,188,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(244,128,40,0.12) 0%, transparent 50%);
     pointer-events: none;
   }
   .hero-tag {
     display: inline-block;
-    background: rgba(29,158,117,0.25);
-    border: 1px solid rgba(93,202,165,0.35);
-    color: #5DCAA5;
+    background: rgba(254,237,13,0.15);
+    border: 1px solid rgba(254,237,13,0.4);
+    color: var(--amarelo);
     font-size: 0.72rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 4px 14px;
@@ -106,17 +121,17 @@
     margin-bottom: 1.2rem;
   }
   .hero h1 {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: clamp(1.8rem, 5vw, 2.8rem);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--branco);
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     margin-bottom: 0.8rem;
   }
-  .hero h1 em { color: #5DCAA5; font-style: normal; }
+  .hero h1 em { color: var(--teal); font-style: normal; }
   .hero p {
-    color: #9FE1CB;
+    color: rgba(255,255,255,0.65);
     font-size: 1rem;
     max-width: 480px;
     margin: 0 auto 2rem;
@@ -130,21 +145,19 @@
     gap: 2.5rem;
     flex-wrap: wrap;
   }
-  .stat {
-    text-align: center;
-  }
+  .stat { text-align: center; }
   .stat-num {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--branco);
+    font-weight: 900;
+    color: var(--laranja);
     line-height: 1;
   }
   .stat-label {
     font-size: 0.72rem;
-    color: #5DCAA5;
+    color: rgba(255,255,255,0.5);
     margin-top: 4px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.04em;
   }
 
@@ -157,9 +170,9 @@
 
   /* ── MÓDULO CARDS ── */
   .secao-titulo {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--cinza-med);
@@ -182,11 +195,11 @@
   }
   .modulo-card:hover {
     box-shadow: 0 8px 28px rgba(0,0,0,0.07);
-    border-color: var(--verde);
+    border-color: var(--laranja);
   }
   .modulo-card.ativo {
-    border-color: var(--verde);
-    box-shadow: 0 0 0 3px rgba(29,158,117,0.12);
+    border-color: var(--laranja);
+    box-shadow: 0 0 0 3px rgba(244,128,40,0.12);
   }
 
   .modulo-header {
@@ -210,8 +223,8 @@
   }
   .modulo-info { flex: 1; min-width: 0; }
   .modulo-nome {
-    font-family: 'Sora', sans-serif;
-    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
     font-size: 0.95rem;
     color: var(--cinza-esc);
     line-height: 1.3;
@@ -274,8 +287,8 @@
     border-radius: 8px;
     margin: 2px 0.5rem;
   }
-  .ep-item:hover { background: var(--verde-clr); }
-  .ep-item.ativo { background: var(--verde-clr); }
+  .ep-item:hover { background: var(--laranja-clr); }
+  .ep-item.ativo { background: var(--laranja-clr); }
 
   .ep-check {
     width: 26px;
@@ -291,12 +304,12 @@
     color: transparent;
   }
   .ep-item.concluido .ep-check {
-    background: var(--verde);
-    border-color: var(--verde);
+    background: var(--teal);
+    border-color: var(--teal);
     color: var(--branco);
   }
   .ep-item.ativo .ep-check {
-    border-color: var(--verde);
+    border-color: var(--laranja);
   }
 
   .ep-info { flex: 1; min-width: 0; }
@@ -315,7 +328,7 @@
   }
   .ep-play {
     font-size: 1.1rem;
-    color: var(--verde);
+    color: var(--laranja);
     opacity: 0;
     transition: opacity 0.15s;
   }
@@ -344,16 +357,16 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background: var(--verde-clr);
+    background: var(--teal-clr);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
   }
   .player-vazio h3 {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--cinza-esc);
   }
   .player-vazio p { font-size: 0.85rem; font-weight: 300; max-width: 280px; }
@@ -381,16 +394,16 @@
   }
   .player-ep-label {
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--verde);
+    color: var(--teal);
     margin-bottom: 0.4rem;
   }
   .player-ep-titulo {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--cinza-esc);
     line-height: 1.3;
     margin-bottom: 0.5rem;
@@ -423,10 +436,10 @@
     text-decoration: none;
   }
   .btn-primary {
-    background: var(--verde);
+    background: var(--laranja);
     color: var(--branco);
   }
-  .btn-primary:hover { background: var(--verde-esc); }
+  .btn-primary:hover { background: var(--laranja-esc); }
   .btn-primary:disabled { background: var(--borda); color: var(--cinza-med); cursor: default; }
   .btn-secondary {
     background: var(--cinza-clr);
@@ -436,23 +449,23 @@
   .btn-secondary:hover { border-color: var(--verde); color: var(--verde); }
 
   .desafio-box {
-    background: var(--verde-clr);
-    border-left: 4px solid var(--verde);
+    background: var(--teal-clr);
+    border-left: 4px solid var(--teal);
     border-radius: 0 12px 12px 0;
     padding: 1rem 1.2rem;
     margin-top: 1.2rem;
   }
   .desafio-label {
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--verde);
+    color: var(--teal);
     margin-bottom: 0.35rem;
   }
   .desafio-texto {
     font-size: 0.88rem;
-    color: var(--verde-esc);
+    color: var(--teal-esc);
     font-weight: 400;
     line-height: 1.5;
   }
@@ -484,11 +497,12 @@
     position: sticky;
     top: 56px;
     z-index: 90;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
   .nav-aba {
-    font-family: 'Sora', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
     padding: 14px 20px;
     cursor: pointer;
     border: none;
@@ -502,7 +516,7 @@
     gap: 7px;
   }
   .nav-aba:hover { color: var(--cinza-esc); }
-  .nav-aba.ativa { color: var(--verde); border-bottom-color: var(--verde); }
+  .nav-aba.ativa { color: var(--laranja); border-bottom-color: var(--laranja); }
   .nav-aba .aba-icon { font-size: 1rem; }
 
   /* ── SEÇÃO TRECHOS ── */
@@ -547,8 +561,8 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     flex-shrink: 0;
   }
-  .trecho-card:hover { border-color: var(--verde); box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
-  .trecho-card.ativo { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(29,158,117,0.12); }
+  .trecho-card:hover { border-color: var(--laranja); box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
+  .trecho-card.ativo { border-color: var(--laranja); box-shadow: 0 0 0 3px rgba(244,128,40,0.12); }
 
   .trecho-thumb {
     position: relative;
@@ -570,7 +584,7 @@
     transition: transform 0.15s;
   }
   .trecho-card:hover .trecho-play-btn { transform: scale(1.1); }
-  .trecho-card.ativo .trecho-play-btn { background: var(--verde); color: var(--branco); }
+  .trecho-card.ativo .trecho-play-btn { background: var(--laranja); color: var(--branco); }
   .trecho-dur {
     position: absolute; bottom: 8px; right: 10px;
     background: rgba(0,0,0,0.7); color: var(--branco);
@@ -584,7 +598,7 @@
     letter-spacing: 0.07em; text-transform: uppercase;
     padding: 2px 8px; border-radius: 99px; margin-bottom: 5px;
   }
-  .trecho-titulo { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--cinza-esc); line-height: 1.35; margin-bottom: 3px; }
+  .trecho-titulo { font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--cinza-esc); line-height: 1.35; margin-bottom: 3px; }
   .trecho-desc { font-size: 0.75rem; color: var(--cinza-med); font-weight: 300; line-height: 1.4; }
 
   .trecho-player-area { position: sticky; top: calc(56px + 48px + 1.5rem); }
@@ -593,14 +607,14 @@
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 3.5rem 1.5rem; text-align: center; gap: 0.8rem; color: var(--cinza-med);
   }
-  .trecho-player-vazio-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--cinza-clr); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
-  .trecho-player-vazio h3 { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--cinza-esc); }
+  .trecho-player-vazio-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--teal-clr); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+  .trecho-player-vazio h3 { font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--cinza-esc); }
   .trecho-player-vazio p { font-size: 0.8rem; font-weight: 300; max-width: 240px; line-height: 1.5; }
   .trecho-player-ativo { display: none; }
   .trecho-player-ativo.visivel { display: block; }
   .trecho-info-box { padding: 1.2rem 1.4rem; border-top: 1px solid var(--borda); }
   .trecho-info-modulo { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 0.3rem; }
-  .trecho-info-titulo { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--cinza-esc); line-height: 1.3; margin-bottom: 0.4rem; }
+  .trecho-info-titulo { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 800; color: var(--cinza-esc); line-height: 1.3; margin-bottom: 0.4rem; }
   .trecho-info-desc { font-size: 0.82rem; color: var(--cinza-med); font-weight: 300; line-height: 1.5; margin-bottom: 1rem; }
   .trecho-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
@@ -621,13 +635,13 @@
     bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%) translateY(80px);
-    background: var(--verde-esc);
-    color: var(--branco);
+    background: var(--cinza-esc);
+    color: var(--amarelo);
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 700;
     padding: 10px 20px;
     border-radius: 99px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 999;
     white-space: nowrap;
@@ -639,7 +653,7 @@
 
 <!-- HEADER -->
 <header>
-  <div class="logo">Alicerce <span>·</span> Produto</div>
+  <div class="logo">Olhar de Bia <span>·</span> Alicerce</div>
   <div class="progresso-geral">
     <span id="txt-progresso">0 de 16 episódios</span>
     <div class="progresso-geral-bar">
@@ -650,7 +664,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">Módulos · 15–20 min por episódio</div>
+  <div class="hero-tag">Olhar de Bia · 15–20 min por episódio</div>
   <h1>Seu próximo passo<br>começa <em>aqui</em></h1>
   <p>Conteúdo curto e direto para jovens de 15 a 21 anos que querem entender para onde ir — e como começar.</p>
   <div class="hero-stats">
@@ -763,14 +777,14 @@
 // ── DADOS DOS TRECHOS ──
 // Cada trecho tem: id, titulo, desc, dur (duração ex: "1:45"), modId (referência ao módulo), epId (referência ao episódio completo), yt (ID do YouTube Shorts/vídeo curto), cor e emoji do módulo
 const TRECHOS = [
-  { id:"t1", titulo:"Por que você não consegue começar?", desc:"Trecho do Ep 1 — o mito da motivação explicado em 2 minutos.", dur:"2:10", modId:"m1", epId:"m1e1", yt:"", cor:"#1D9E75", corClr:"#E1F5EE", emoji:"💪" },
-  { id:"t2", titulo:"Ação gera motivação — não o contrário", desc:"Trecho do Ep 1 — a inversão que muda tudo.", dur:"1:45", modId:"m1", epId:"m1e1", yt:"", cor:"#1D9E75", corClr:"#E1F5EE", emoji:"💪" },
-  { id:"t3", titulo:"O que fazer quando você trava no meio?", desc:"Trecho do Ep 2 — decisão vs espera.", dur:"2:30", modId:"m1", epId:"m1e2", yt:"", cor:"#1D9E75", corClr:"#E1F5EE", emoji:"💪" },
-  { id:"t4", titulo:"Comparação produtiva vs paralisante", desc:"Trecho do Ep 3 — como usar o que você vê nas redes a seu favor.", dur:"1:55", modId:"m1", epId:"m1e3", yt:"", cor:"#1D9E75", corClr:"#E1F5EE", emoji:"💪" },
-  { id:"t5", titulo:"Profissões que você nunca considerou", desc:"Trecho do Ep 1 M2 — expandindo o mapa de possibilidades.", dur:"2:20", modId:"m2", epId:"m2e1", yt:"", cor:"#534AB7", corClr:"#EEEDFE", emoji:"🗺️" },
-  { id:"t6", titulo:"Como testar uma carreira em 1 semana", desc:"Trecho do Ep 3 M2 — explorar sem se comprometer.", dur:"1:50", modId:"m2", epId:"m2e3", yt:"", cor:"#534AB7", corClr:"#EEEDFE", emoji:"🗺️" },
-  { id:"t7", titulo:"O que você faz sem ninguém pedir?", desc:"Trecho do Ep 1 M3 — identificando energias naturais.", dur:"2:05", modId:"m3", epId:"m3e1", yt:"", cor:"#444441", corClr:"#F1EFE8", emoji:"🪞" },
-  { id:"t8", titulo:"O menor passo possível — e por que funciona", desc:"Trecho do Ep 1 M4 — ação mínima viável na prática.", dur:"1:40", modId:"m4", epId:"m4e1", yt:"", cor:"#B07A1A", corClr:"#FAEEDA", emoji:"🚀" },
+  { id:"t1", titulo:"Por que você não consegue começar?", desc:"Trecho do Ep 1 — o mito da motivação explicado em 2 minutos.", dur:"2:10", modId:"m1", epId:"m1e1", yt:"", cor:"#0CC1BC", corClr:"#E0F9F8", emoji:"💪" },
+  { id:"t2", titulo:"Ação gera motivação — não o contrário", desc:"Trecho do Ep 1 — a inversão que muda tudo.", dur:"1:45", modId:"m1", epId:"m1e1", yt:"", cor:"#0CC1BC", corClr:"#E0F9F8", emoji:"💪" },
+  { id:"t3", titulo:"O que fazer quando você trava no meio?", desc:"Trecho do Ep 2 — decisão vs espera.", dur:"2:30", modId:"m1", epId:"m1e2", yt:"", cor:"#0CC1BC", corClr:"#E0F9F8", emoji:"💪" },
+  { id:"t4", titulo:"Comparação produtiva vs paralisante", desc:"Trecho do Ep 3 — como usar o que você vê nas redes a seu favor.", dur:"1:55", modId:"m1", epId:"m1e3", yt:"", cor:"#0CC1BC", corClr:"#E0F9F8", emoji:"💪" },
+  { id:"t5", titulo:"Profissões que você nunca considerou", desc:"Trecho do Ep 1 M2 — expandindo o mapa de possibilidades.", dur:"2:20", modId:"m2", epId:"m2e1", yt:"", cor:"#F48028", corClr:"#FEF0E4", emoji:"🗺️" },
+  { id:"t6", titulo:"Como testar uma carreira em 1 semana", desc:"Trecho do Ep 3 M2 — explorar sem se comprometer.", dur:"1:50", modId:"m2", epId:"m2e3", yt:"", cor:"#F48028", corClr:"#FEF0E4", emoji:"🗺️" },
+  { id:"t7", titulo:"O que você faz sem ninguém pedir?", desc:"Trecho do Ep 1 M3 — identificando energias naturais.", dur:"2:05", modId:"m3", epId:"m3e1", yt:"", cor:"#C4B800", corClr:"#FFFDE6", emoji:"🪞" },
+  { id:"t8", titulo:"O menor passo possível — e por que funciona", desc:"Trecho do Ep 1 M4 — ação mínima viável na prática.", dur:"1:40", modId:"m4", epId:"m4e1", yt:"", cor:"#087A77", corClr:"#E0F9F8", emoji:"🚀" },
 ];
 
 // ── NAVEGAÇÃO POR ABAS ──
@@ -871,8 +885,8 @@ const MODULOS = [
     id: "m1",
     nome: "Como me mantenho?",
     sub: "Módulo 1 · Motivação e persistência",
-    cor: "#1D9E75",
-    corClr: "#E1F5EE",
+    cor: "#0CC1BC",
+    corClr: "#E0F9F8",
     eps: [
       { id:"m1e1", titulo:"Você não precisa estar motivado para começar", dur:"~18 min", desc:"Desmonta o mito de que motivação precede ação. Apresenta o conceito de ação geradora de motivação e o efeito Zeigarnik.", desafio:"Escolha uma coisa que você está adiando e faça o menor passo possível em direção a ela — hoje, antes de dormir.", yt:"" },
       { id:"m1e2", titulo:"O que fazer quando tudo parece travado", dur:"~16 min", desc:"Aborda o estado de paralisia e a distinção entre problemas que exigem decisão e situações que exigem espera.", desafio:"Identifique uma coisa que está travada e classifique: é decisão ou é espera?", yt:"" },
@@ -884,8 +898,8 @@ const MODULOS = [
     id: "m2",
     nome: "Para onde posso ir?",
     sub: "Módulo 2 · Carreira e mundo do trabalho",
-    cor: "#534AB7",
-    corClr: "#EEEDFE",
+    cor: "#F48028",
+    corClr: "#FEF0E4",
     eps: [
       { id:"m2e1", titulo:"O mundo do trabalho que ninguém te mostrou", dur:"~17 min", desc:"Apresenta profissões e áreas fora do radar do jovem. Expande o mapa de possibilidades.", desafio:"Pesquise 3 profissões que você nunca considerou e descubra o que fazem no dia a dia.", yt:"" },
       { id:"m2e2", titulo:"O que é uma carreira hoje (e o que não é mais)", dur:"~15 min", desc:"Desmonta a ideia de carreira linear. Apresenta trajetórias reais de pessoas que criaram seus próprios caminhos.", desafio:"Encontre uma pessoa com uma trajetória não-convencional e entenda como ela chegou lá.", yt:"" },
@@ -897,8 +911,8 @@ const MODULOS = [
     id: "m3",
     nome: "Quem sou eu?",
     sub: "Módulo 3 · Autoconhecimento como instrumento",
-    cor: "#444441",
-    corClr: "#F1EFE8",
+    cor: "#FEED0D",
+    corClr: "#FFFDE6",
     eps: [
       { id:"m3e1", titulo:"O que te move sem ninguém pedir", dur:"~15 min", desc:"Convida o jovem a observar o que faz espontaneamente — comportamentos reais, não talentos abstratos.", desafio:"Liste 3 coisas que você faz sem que ninguém peça e que faria mesmo sem receber nada por isso.", yt:"" },
       { id:"m3e2", titulo:"O que os outros enxergam em você", dur:"~16 min", desc:"O olhar externo como espelho de habilidades invisíveis — o que você não percebe em si mesmo.", desafio:"Pergunte para 2 pessoas: 'o que você acha que eu faço bem?' Anote as respostas.", yt:"" },
@@ -910,8 +924,8 @@ const MODULOS = [
     id: "m4",
     nome: "Como começo?",
     sub: "Módulo 4 · Próximos passos concretos",
-    cor: "#B07A1A",
-    corClr: "#FAEEDA",
+    cor: "#1A3A38",
+    corClr: "#E0F9F8",
     eps: [
       { id:"m4e1", titulo:"A diferença entre decidir e agir", dur:"~15 min", desc:"Aborda a tendência de confundir planejamento com progresso. Apresenta a ação mínima viável.", desafio:"Identifique uma ação que você tem adiado e reduza-a ao menor formato possível. Faça hoje.", yt:"" },
       { id:"m4e2", titulo:"Como montar seu próximo passo sem precisar de tudo pronto", dur:"~17 min", desc:"Método simples de planejamento de curto prazo: o que explorar, quem pode ajudar, o que fazer essa semana.", desafio:"Preencha o mapa: 1 direção + 1 pessoa que pode te ajudar + 1 ação para essa semana.", yt:"" },
